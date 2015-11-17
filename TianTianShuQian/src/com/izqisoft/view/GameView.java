@@ -187,7 +187,7 @@ public class GameView extends RelativeLayout implements OnClickListener {
 
 		}
 
-		 mp.start();
+		mp.start();
 		img_1 = (ImageView) findViewById(R.id.img_1);
 		img_2 = (ImageView) findViewById(R.id.img_2);
 		img_3 = (ImageView) findViewById(R.id.img_3);
@@ -375,10 +375,9 @@ public class GameView extends RelativeLayout implements OnClickListener {
 
 	public void DestreyView() {
 		try {
-		
+
 			mhandler.removeMessages(-1);
-			if(mTimerTask!=null)
-			{
+			if (mTimerTask != null) {
 				mTimerTask.cancel();
 			}
 			if (mp != null) {

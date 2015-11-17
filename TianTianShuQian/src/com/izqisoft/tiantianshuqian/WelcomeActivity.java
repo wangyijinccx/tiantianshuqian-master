@@ -15,13 +15,15 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class WelcomeActivity extends Activity{
+public class WelcomeActivity extends Activity {
 
 	ImageView myView;
 	TextView tv_text;
 	ObjectAnimator fadein;
 	ObjectAnimator mover;
-	private String []str={"秋风送爽心舒畅，财源滚滚到身旁","送你招财猫，天天进钞票","送你摇钱树，好运挡不住","送你宝葫芦，生活多福禄","518，我要发，祝君发财"};
+	private String[] str = { "秋风送爽心舒畅，财源滚滚到身旁", "送你招财猫，天天进钞票", "送你摇钱树，好运挡不住",
+			"送你宝葫芦，生活多福禄", "518，我要发，祝君发财" };
+
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public class WelcomeActivity extends Activity{
 		tv_text = (TextView) findViewById(R.id.text);
 		ObjectAnimator fadeOut = ObjectAnimator.ofFloat(myView, "alpha", .2f,
 				1f);
-		int index=(new Random()).nextInt(str.length);
+		int index = (new Random()).nextInt(str.length);
 		tv_text.setText(str[index]);
 		tv_text.setVisibility(View.INVISIBLE);
 		fadein = ObjectAnimator.ofFloat(tv_text, "alpha", 0.0f, 1.0f);
@@ -81,8 +83,6 @@ public class WelcomeActivity extends Activity{
 		});
 		mAnimationSet.start();
 	}
-
-
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
